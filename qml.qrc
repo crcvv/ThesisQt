@@ -9,5 +9,6 @@
         <file>ionicons.ttf</file>
         <file>IonIcon.qml</file>
         <file>AppMenuItem.qml</file>
+        <file>Avatar.qml</file>
     </qresource>
 </RCC>

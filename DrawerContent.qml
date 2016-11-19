@@ -45,7 +45,7 @@ Item {
 
             Label {
                 id: email
-                text: qsTr("Email@aaa.com")
+                text: qsTr("email@email.com")
                 leftPadding: 10
                 font.bold: false
             }
@@ -84,12 +84,32 @@ Item {
 
                 AppMenuItem {
                     icon: "\uf132"
-                    text: "Hello"
+                    text: "Check mail"
                 }
 
                 AppMenuItem {
-                    icon: "\uf132"
-                    text: "Hello asfsdf"
+                    icon: "\uf11d"
+                    text: "Call Someone"
+                }
+
+                AppMenuItem {
+                    icon: "\uf212"
+                    text: "Friends"
+                }
+
+                AppMenuItem {
+                    icon: "\uf269"
+                    text: "Breaking Bad"
+                }
+
+                AppMenuItem {
+                    icon: "\uf20c"
+                    text: "Music"
+                }
+
+                AppMenuItem {
+                    icon: "\uf29e"
+                    text: "Login"
                 }
 
                 Item {
@@ -99,8 +119,24 @@ Item {
             }
 
             ColumnLayout {
-                Label {
-                    text: "Hi"
+                AppMenuItem {
+                    icon: "\uf48b"
+                    text: "Add account"
+                }
+
+                AppMenuItem {
+                    icon: "\uf212"
+                    text: "Manage accounts"
+                }
+
+                AppMenuItem {
+                    icon: "\uf13e"
+                    text: "Settings"
+                }
+
+                AppMenuItem {
+                    icon: "\uf29e"
+                    text: "Login"
                 }
 
                 Item {
