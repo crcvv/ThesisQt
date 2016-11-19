@@ -2,11 +2,8 @@
     <qresource prefix="/">
         <file>ionicons.ttf</file>
         <file>qtquickcontrols2.conf</file>
-        <file>src/App/AppMenuItem.qml</file>
         <file>src/App/DrawerContent.qml</file>
         <file>src/App/IonIcon.qml</file>
-        <file>src/App/Page1.qml</file>
-        <file>src/App/Page1Form.ui.qml</file>
         <file>src/App/images/barrett.jpg</file>
         <file>src/App/images/blue-album.jpg</file>
         <file>src/App/images/dookie.jpg</file>
@@ -49,5 +46,10 @@
         <file>src/Ionic/variables/colors.js</file>
         <file>src/Ionic/variables/fontawesome.js</file>
         <file>src/Ionic/variables/items.js</file>
+        <file>src/App/PageTabs.qml</file>
+        <file>src/App/PageContacts.qml</file>
+        <file>src/App/PageCamera.qml</file>
+        <file>src/App/PageAbout.qml</file>
+        <file>src/App/PageContact.qml</file>
     </qresource>
 </RCC>
