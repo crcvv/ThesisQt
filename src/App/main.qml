@@ -17,7 +17,7 @@ ApplicationWindow {
 
     Drawer {
         id: drawer
-        width: 0.66 * window.width
+        width: 0.8 * window.width
         height: window.height
 
         DrawerContent {

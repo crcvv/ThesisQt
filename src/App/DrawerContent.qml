@@ -30,6 +30,7 @@ Item {
 
         RowLayout {
             height: 50
+            Layout.minimumWidth: 0
             Layout.fillWidth: true
             spacing: 0
 
@@ -49,6 +50,7 @@ Item {
             Label {
                 id: email
                 text: qsTr("email@email.com")
+                Layout.minimumWidth: 0
                 leftPadding: 10
                 font.bold: false
             }
