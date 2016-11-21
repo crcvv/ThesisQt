@@ -32,4 +32,11 @@ ApplicationWindow {
 
         initialItem: PageTabs {}
     }
+
+    onClosing: {
+        if (stack.depth > 1) {
+            stack.pop()
+            close.accepted = false
+        }
+    }
 }
