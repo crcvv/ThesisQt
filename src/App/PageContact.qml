@@ -11,6 +11,8 @@ Page {
         detail: "I'm busy"
     }
 
+    title: item.title
+
     id: page
 
     IconListView {

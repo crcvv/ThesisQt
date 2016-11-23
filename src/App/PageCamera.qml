@@ -7,6 +7,8 @@ import "../Ionic/cards"
 import "../Ionic/lists"
 
 Page {
+    title: "Camera"
+
     Label {
         text: qsTr("Second page")
         anchors.centerIn: parent

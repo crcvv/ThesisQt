@@ -7,6 +7,8 @@ import "../Ionic/cards"
 import "../Ionic/lists"
 
 Page {
+    id: "page_tabs"
+
     SwipeView {
         id: swipeView
         anchors.fill: parent
@@ -19,6 +21,14 @@ Page {
         }
 
         PageAbout {
+        }
+
+        onCurrentIndexChanged: {
+            page_tabs.title = currentItem.title
+        }
+
+        Component.onCompleted: {
+            page_tabs.title = currentItem.title
         }
     }
 

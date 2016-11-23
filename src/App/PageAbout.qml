@@ -7,6 +7,8 @@ import "../Ionic/cards"
 import "../Ionic/lists"
 
 Page {
+    title: "About"
+
     Card{
         model: ListModel{
             ListElement{

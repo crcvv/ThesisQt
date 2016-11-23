@@ -2,9 +2,12 @@ import QtQuick 2.7
 import QtQuick.Controls 2.0
 import QtQuick.Controls.Material 2.0
 
+import "../Ionic/bars"
 import "../Ionic/buttons"
 import "../Ionic/cards"
 import "../Ionic/lists"
+
+import "../Ionic/variables/fontawesome.js" as FontAwesome
 
 ApplicationWindow {
     id: window
@@ -12,6 +15,8 @@ ApplicationWindow {
     width: 640
     height: 480
     title: qsTr("Thesis Qt")
+
+    property string pageTitle: ""
 
     FontLoader{ source: "qrc:/src/Ionic/fonts/fontawesome-webfont.ttf"}
 
@@ -31,12 +36,39 @@ ApplicationWindow {
         anchors.fill: parent
 
         initialItem: PageTabs {}
+
+        function updateAppTitle() {
+            window.pageTitle = currentItem.title
+        }
+
+        onCurrentItemChanged: {
+            updateAppTitle()
+
+            currentItem.titleChanged.connect(updateAppTitle)
+        }
     }
 
     onClosing: {
         if (stack.depth > 1) {
             stack.pop()
             close.accepted = false
+        }
+    }
+
+    header: Bar {
+        class_name: "royal"
+        title: window.pageTitle
+
+        leftComponent: ButtonDefault {
+            class_name: "royal"
+            icon: FontAwesome.icons.fa_bars
+
+            onClicked: {
+                if (drawer.opened())
+                    drawer.close()
+                else
+                    drawer.open()
+            }
         }
     }
 }
