@@ -51,5 +51,6 @@
         <file>src/App/PageCamera.qml</file>
         <file>src/App/PageAbout.qml</file>
         <file>src/App/PageContact.qml</file>
+        <file>src/App/PageTest.qml</file>
     </qresource>
 </RCC>

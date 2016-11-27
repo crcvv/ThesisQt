@@ -6,6 +6,9 @@ import "../Ionic/buttons"
 import "../Ionic/cards"
 import "../Ionic/lists"
 
+import "../Ionic/variables/fontawesome.js" as FontAwesome
+import "../Ionic/variables/items.js" as StyleHelper
+
 Page {
     id: "page_tabs"
 
@@ -36,13 +39,19 @@ Page {
         id: tabBar
         currentIndex: swipeView.currentIndex
         TabButton {
-            text: qsTr("First")
+            font.family: "FontAwesome"
+            font.pixelSize: StyleHelper.item_icon_font_size
+            text: FontAwesome.icons.fa_users
         }
         TabButton {
-            text: qsTr("Second")
+            font.family: "FontAwesome"
+            font.pixelSize: StyleHelper.item_icon_font_size
+            text: FontAwesome.icons.fa_camera
         }
         TabButton {
-            text: qsTr("Third")
+            font.family: "FontAwesome"
+            font.pixelSize: StyleHelper.item_icon_font_size
+            text: FontAwesome.icons.fa_info_circle
         }
     }
 }

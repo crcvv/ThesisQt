@@ -79,18 +79,18 @@ Item {
         }
 
         StackLayout {
-            id: stack
-
             Layout.fillHeight: true
 
             IconListView {
                 anchors.fill: parent
 
                 model: [{
+                    page: "test",
                     text: "Check mail",
-                    leftIcon: FontAwesome.icons.fa_envelope
+                    leftIcon: FontAwesome.icons.fa_envelope,
                 },
                 {
+                    page: "tabs",
                     text: "Call Someone",
                     leftIcon: FontAwesome.icons.fa_comment,
                     rightIcon: FontAwesome.icons.fa_phone
@@ -119,6 +119,17 @@ Item {
                     text: "Login",
                     leftIcon: FontAwesome.icons.fa_sign_in
                 }]
+
+                onItemClicked: {
+                    if (item.page) {
+                        // Pop all the way to root
+                        stack.pop(null)
+
+                        // Replace root
+                        stack.replace(stack.pages[item.page])
+                    }
+                    drawer.close()
+                }
             }
 
             IconListView {

@@ -35,16 +35,24 @@ ApplicationWindow {
 
         anchors.fill: parent
 
-        initialItem: PageTabs {}
+        property var pages: {
+            "tabs": Qt.createComponent("PageTabs.qml"),
+            "test": Qt.createComponent("PageTest.qml"),
+            "contact": Qt.createComponent("PageContact.qml")
+        }
+
+        initialItem: pages.tabs
 
         function updateAppTitle() {
-            window.pageTitle = currentItem.title
+            if (currentItem)
+                window.pageTitle = currentItem.title
         }
 
         onCurrentItemChanged: {
             updateAppTitle()
 
-            currentItem.titleChanged.connect(updateAppTitle)
+            if (currentItem)
+                currentItem.titleChanged.connect(updateAppTitle)
         }
     }
 

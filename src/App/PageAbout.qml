@@ -5,6 +5,7 @@ import QtQuick.Controls.Material 2.0
 import "../Ionic/buttons"
 import "../Ionic/cards"
 import "../Ionic/lists"
+import "../Ionic/bars"
 
 Page {
     title: "About"
@@ -16,5 +17,10 @@ Page {
             }
         }
         footer: qsTr("Oulu University of Applied Sciences, OAMK")
+    }
+
+    footer: Bar{
+        title: "© Claudia Caro 2016-2017"
+        class_name: "energized"
     }
 }

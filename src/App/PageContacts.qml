@@ -13,7 +13,7 @@ Page {
         anchors.fill: parent
 
         onItemClicked: {
-            stack.push(Qt.createComponent("PageContact.qml"), { "item": item })
+            stack.push(stack.pages.contact, { "item": item })
         }
         
         model: ListModel {
