@@ -51,6 +51,7 @@
         <file>src/App/PageCamera.qml</file>
         <file>src/App/PageAbout.qml</file>
         <file>src/App/PageContact.qml</file>
-        <file>src/App/PageTest.qml</file>
+        <file>src/App/images/totoro.png</file>
+        <file>src/App/PageMail.qml</file>
     </qresource>
 </RCC>

@@ -54,6 +54,7 @@ ButtonStyle {
             font.pixelSize: control.fontSize
             color: root.style.text
             Layout.alignment: Qt.AlignCenter
+            Layout.fillWidth: true
         }
     }
 }

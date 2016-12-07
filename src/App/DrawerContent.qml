@@ -85,7 +85,7 @@ Item {
                 anchors.fill: parent
 
                 model: [{
-                    page: "test",
+                    page: "mail",
                     text: "Check mail",
                     leftIcon: FontAwesome.icons.fa_envelope,
                 },
@@ -96,6 +96,7 @@ Item {
                     rightIcon: FontAwesome.icons.fa_phone
                 },
                 {
+                    page: "tabs",
                     text: "Friends",
                     leftIcon: FontAwesome.icons.fa_users,
                     badge: "0",

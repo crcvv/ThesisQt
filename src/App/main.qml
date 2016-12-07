@@ -37,8 +37,9 @@ ApplicationWindow {
 
         property var pages: {
             "tabs": Qt.createComponent("PageTabs.qml"),
-            "test": Qt.createComponent("PageTest.qml"),
-            "contact": Qt.createComponent("PageContact.qml")
+            "mail": Qt.createComponent("PageMail.qml"),
+            "contact": Qt.createComponent("PageContact.qml"),
+            "friends": Qt.createComponent("PageContacts.qml")
         }
 
         initialItem: pages.tabs

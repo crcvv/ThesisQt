@@ -1,7 +1,7 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.0
 import QtQuick.Controls.Material 2.0
-import QtQuick.Layouts 1.1
+import QtQuick.Layouts 1.3
 import QtMultimedia 5.4
 
 import "../Ionic/buttons"
@@ -37,45 +37,64 @@ Page {
 
         imageCapture {
             onImageCaptured: {
-                // TODO: Do anything with "preview" ...
+                imagePreview.source = preview
+
+                cameraViews.currentIndex = 1
             }
         }
     }
 
-    GridLayout {
+    StackLayout {
+        anchors.fill: parent
         anchors.rightMargin: 10
         anchors.leftMargin: 10
         anchors.topMargin: 10
-        columnSpacing: 10
-        rowSpacing: 10
         anchors.bottomMargin: 10
-        anchors.fill: parent
-        rows: 2
-        columns: 2
 
-        VideoOutput {
-            autoOrientation: true
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-            Layout.columnSpan: 2
-            source: camera
-            focus: visible
+        id: cameraViews
+
+        ColumnLayout {
+            spacing: 10
+            anchors.fill: parent
+
+            VideoOutput {
+                autoOrientation: true
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                source: camera
+                focus: visible
+            }
+
+            ButtonDefault {
+                text: "Take picture"
+                Layout.fillWidth: true
+                icon: FontAwesome.icons.fa_camera
+                class_name: "royal large"
+                iconRight: false
+                onClicked: camera.imageCapture.capture()
+            }
         }
 
-        ButtonDefault {
-            text: "Select picture"
-            height: 50
-            Layout.fillWidth: true
-            icon: FontAwesome.icons.fa_picture_o
-            class_name: "royal"
-        }
+        ColumnLayout {
+            spacing: 10
+            anchors.fill: parent
 
-        ButtonDefault {
-            text: "Take picture"
-            height: 50
-            Layout.fillWidth: true
-            icon: FontAwesome.icons.fa_camera
-            class_name: "royal"
+            Image {
+                id: "imagePreview"
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+            }
+
+            ButtonDefault {
+                text: "Discard"
+                Layout.fillWidth: true
+                icon: FontAwesome.icons.fa_times
+                class_name: "royal large"
+                iconRight: false
+                onClicked: {
+                    cameraViews.currentIndex = 0
+                }
+            }
         }
     }
 }

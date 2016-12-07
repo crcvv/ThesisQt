@@ -46,6 +46,7 @@ ButtonStyle {
             font.pixelSize: control.fontSize
             color: (control.pressed || control.selected) ? "#fff" : root.style.border
             Layout.alignment: Qt.AlignCenter
+            Layout.fillWidth: true
         }
     }
 }
