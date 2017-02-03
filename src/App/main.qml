@@ -65,18 +65,42 @@ ApplicationWindow {
     }
 
     header: Bar {
+        id: headerBar
+
         class_name: "royal"
         title: window.pageTitle
 
-        leftComponent: ButtonDefault {
-            class_name: "royal"
-            icon: FontAwesome.icons.fa_bars
+        leftComponent: Loader {
+            sourceComponent: stack.depth == 1 ? menuButton : backButton
 
-            onClicked: {
-                if (drawer.opened())
-                    drawer.close()
-                else
-                    drawer.open()
+            Component {
+                id: backButton
+
+                ButtonDefault {
+                    class_name: "royal"
+                    text: hasBackButtonText ? stack.get(stack.depth - 2).title : ""
+                    icon: FontAwesome.icons.fa_angle_left
+
+                    onClicked: {
+                        stack.pop()
+                    }
+                }
+            }
+
+            Component {
+                id: menuButton
+
+                ButtonDefault {
+                    class_name: "royal"
+                    icon: FontAwesome.icons.fa_bars
+
+                    onClicked: {
+                        if (drawer.opened())
+                            drawer.close()
+                        else
+                            drawer.open()
+                    }
+                }
             }
         }
     }
