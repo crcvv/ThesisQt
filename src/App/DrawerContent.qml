@@ -68,9 +68,9 @@ Item {
                 Layout.preferredWidth: 50
 
                 onClicked: {
-                    stack.currentIndex = (stack.currentIndex == 0 ? 1 : 0);
+                    drawerStack.currentIndex = (drawerStack.currentIndex == 0 ? 1 : 0);
 
-                    if (stack.currentIndex == 0)
+                    if (drawerStack.currentIndex == 0)
                         text = "▼";
                     else
                         text = "▲";
@@ -80,6 +80,8 @@ Item {
 
         StackLayout {
             Layout.fillHeight: true
+
+            id: "drawerStack"
 
             IconListView {
                 anchors.fill: parent
